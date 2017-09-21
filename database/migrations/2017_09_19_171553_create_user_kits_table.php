@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateUserKitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_kits', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_id')->index();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('profileFilePath');
-            $table->rememberToken();
+            $table->string('kit_id')->index();
+            $table->string('kit_name');
+            $table->string('kit_type');
+            $table->string('description');
+            $table->integer('item_quantity');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_kits');
     }
 }
