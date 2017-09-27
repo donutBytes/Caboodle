@@ -13,8 +13,10 @@
 
 Auth::routes();
 
+//Route::get('/', function () {
+//    return view('auth/login');
+//});
 Route::get('/', 'HomeController@index')->name('home');
-
-Route::view('/favorites','favorites')->middleware('auth')->name('favorites');
-Route::view('/following','following')->middleware('auth')->name('following');
-Route::view('/profile','profile')->middleware('auth')->name('profile');
+Route::get('/favorites','FavoritesController@index')->name('favorites');
+Route::get('/following','FollowingController@index')->name('following');
+Route::get('/profile','ProfileController@index')->name('profile');

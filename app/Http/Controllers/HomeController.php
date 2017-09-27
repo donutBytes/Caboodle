@@ -11,9 +11,9 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct() //commented out middleware to prevent '/' redirect to '/login'
+    public function __construct() 
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
