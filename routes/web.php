@@ -14,3 +14,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::view('/favorites','favorites')->middleware('auth')->name('favorites');
+Route::view('/following','following')->middleware('auth')->name('following');
+Route::view('/profile','profile')->middleware('auth')->name('profile');

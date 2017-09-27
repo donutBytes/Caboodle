@@ -8,13 +8,12 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    Your kits
+                    @auth
+                      Your Kits
+                    @endauth
+                    @guest
+                      You are not logged in
+                    @endguest
                 </div>
             </div>
         </div>
