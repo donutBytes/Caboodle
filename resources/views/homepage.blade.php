@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Your kits
+                    Your Kits
                 </div>
             </div>
         </div>
