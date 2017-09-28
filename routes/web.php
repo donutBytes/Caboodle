@@ -19,4 +19,5 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/favorites','FavoritesController@index')->name('favorites');
 Route::get('/following','FollowingController@index')->name('following');
+Route::get('/userprofile','UserProfileController@index')->name('profile');
 Route::get('/profile','ProfileController@index')->name('profile');
