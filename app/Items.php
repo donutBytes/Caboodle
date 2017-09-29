@@ -14,5 +14,6 @@ class Items extends Model
         parent::boot();
         self::creating(function ($model) {
         $model->item_id = (string) Uuid::generate(4);
-    });
+        });
+    }
 }

@@ -11,8 +11,9 @@ class KitItems extends Model
 
     public static function boot()
     {
-      parent::boot();
-      self::creating(function ($model) {
+        parent::boot();
+        self::creating(function ($model) {
         $model->kit_item_id = (string) Uuid::generate(4);
-    });
+        });
+    }
 }

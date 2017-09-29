@@ -34,5 +34,5 @@ class User extends Authenticatable
       self::creating(function ($model) {
         $model->user_id = (string) Uuid::generate(4);
     });
-}
+    }
 }

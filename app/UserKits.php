@@ -16,5 +16,6 @@ class UserKits extends Model
         parent::boot();
         self::creating(function ($model) {
         $model->kit_id = (string) Uuid::generate(4);
-    });
+        });
+    }
 }
