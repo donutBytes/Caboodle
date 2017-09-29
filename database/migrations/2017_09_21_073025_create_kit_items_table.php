@@ -18,6 +18,7 @@ class CreateKitItemsTable extends Migration
             $table->string('kit_id')->index();
             $table->string('item_id');
             $table->string('kit_item_id')->index();
+            $table->string('name');
             $table->string('condition');
             $table->integer('cost')->nullable();
             $table->string('description');

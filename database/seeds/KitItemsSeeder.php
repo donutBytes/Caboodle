@@ -17,6 +17,7 @@ class KitItemsSeeder extends Seeder
         DB::table('kit_items')->insert([
           'kit_id'=>str_random(10),
           'item_id'=>str_random(10),
+          'name'=>str_random(10),
           'kit_item_id'=>(string) Uuid::generate(4),
           'condition'=>str_random(10),
           'cost'=>rand($min=1,$max=10000),
