@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use Webpatser\Uuid\Uuid;
 
 class UserKitsSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class UserKitsSeeder extends Seeder
       $faker = Faker::create();
       DB::table('user_kits')->insert([
         'user_id'=>str_random(10),
-        'kit_id'=>str_random(10),
+        'kit_id'=>(string) Uuid::generate(4),
         'kit_name'=>str_random(10),
         'kit_type'=>str_random(5),
         'description'=>str_random(100),

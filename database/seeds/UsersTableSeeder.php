@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use Webpatser\Uuid\Uuid;
 
 class UsersTableSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class UsersTableSeeder extends Seeder
     {
       $faker = Faker::create();
         DB::table('users')->insert([
+          'user_id'=> (string) Uuid::generate(4),
           'name' => $faker->name,
           'email' => $faker->unique()->safeEmail,
           'password' => bcrypt('secret'),
