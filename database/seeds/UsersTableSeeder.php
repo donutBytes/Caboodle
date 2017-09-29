@@ -13,13 +13,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('users')->delete();
+
       $faker = Faker::create();
         DB::table('users')->insert([
-          'user_id'=> (string) Uuid::generate(4),
-          'name' => $faker->name,
-          'email' => $faker->unique()->safeEmail,
+          'user_id'=> 'dca898f6-20e6-45d6-bd54-560dc77e4243 ',
+          'name' => 'rbilemjian',
+          'email' => 'rbilemjian@gmail.com',
           'password' => bcrypt('secret'),
-          'remember_token' => str_random(10),
+          'remember_token' => str_random(10)
         ]);
     }
 }

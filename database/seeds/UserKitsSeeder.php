@@ -13,10 +13,11 @@ class UserKitsSeeder extends Seeder
      */
     public function run()
     {
+       DB::table('user_kits')->delete();
       $faker = Faker::create();
       DB::table('user_kits')->insert([
-        'user_id'=>str_random(10),
-        'kit_id'=>(string) Uuid::generate(4),
+        'user_id'=> 'dca898f6-20e6-45d6-bd54-560dc77e4243 ',
+        'kit_id'=> (string) Uuid::generate(4),
         'kit_name'=>str_random(10),
         'kit_type'=>str_random(5),
         'description'=>str_random(100),

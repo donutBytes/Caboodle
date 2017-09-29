@@ -8,7 +8,7 @@
                 <div class="panel-heading">Your Kits</div>
                   <div class="panel-body">
                     @foreach($kits as $kit)
-                    <li>{{$kit->kit_name}}</li>
+                      <li>{{$kit->kit_name}}</li>
                     @endforeach
                   </div>
             </div>

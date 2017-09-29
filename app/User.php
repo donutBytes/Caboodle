@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\UserKits;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Webpatser\Uuid\Uuid;
@@ -35,4 +36,8 @@ class User extends Authenticatable
         $model->user_id = (string) Uuid::generate(4);
     });
     }
+    // public function user_kits()
+    // {
+    //   return $this->hasMany(UserKits::class);
+    // }
 }
