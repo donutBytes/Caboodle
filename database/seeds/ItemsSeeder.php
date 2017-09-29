@@ -13,12 +13,13 @@ class ItemsSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('items')->delete();
       $faker = Faker::create();
       DB::table('items')->insert([
-        'user_id'=>str_random(10),
-        'item_id'=>(string) Uuid::generate(4),
-        'name'=>str_random(10),
-        'producer'=>str_random(10),
+        'user_id'=>'dca898f6-20e6-45d6-bd54-560dc77e4243',
+        'item_id'=>'a6aab468-63e5-4bd4-9c0f-2dd52e731ce4',
+        'name'=>'GI-Joe',
+        'producer'=>'Company',
         'date_released'=>$faker->date($format = 'Y-m-d',$max = 'now')
       ]);
     }

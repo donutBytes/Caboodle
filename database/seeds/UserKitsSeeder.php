@@ -16,12 +16,12 @@ class UserKitsSeeder extends Seeder
        DB::table('user_kits')->delete();
       $faker = Faker::create();
       DB::table('user_kits')->insert([
-        'user_id'=> 'dca898f6-20e6-45d6-bd54-560dc77e4243 ',
-        'kit_id'=> (string) Uuid::generate(4),
-        'kit_name'=>str_random(10),
-        'kit_type'=>str_random(5),
-        'description'=>str_random(100),
-        'item_quantity'=>rand($min=1,$max=100)
+        'user_id'=> 'dca898f6-20e6-45d6-bd54-560dc77e4243',
+        'kit_id'=> 'c68696dd-cd10-4ede-a42c-3e2ffb8a56ab',
+        'kit_name'=>'GI-Joes',
+        'kit_type'=>'Action Figures',
+        'description'=>'The greatest GI-Joes you have ever seen in your life.',
+        'item_quantity'=>1
       ]);
     }
 }
