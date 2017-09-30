@@ -6,8 +6,15 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Your Favorites</div>
-
                 <div class="panel-body">
+                  Favorited Kits
+                  @foreach($kits as $kit)
+                    <li>{{$kit->kit_name}}</li>
+                    Favorited Items
+                  @endforeach
+                  @foreach($items as $item)
+                    <li>{{$item->name}}</li>
+                  @endforeach
                 </div>
             </div>
         </div>
