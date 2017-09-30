@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 use Webpatser\Uuid\Uuid;
 
 class UserKitsSeeder extends Seeder
@@ -14,7 +13,6 @@ class UserKitsSeeder extends Seeder
     public function run()
     {
        DB::table('user_kits')->delete();
-      $faker = Faker::create();
       DB::table('user_kits')->insert([
         'user_id'=> 'dca898f6-20e6-45d6-bd54-560dc77e4243',
         'kit_id'=> 'c68696dd-cd10-4ede-a42c-3e2ffb8a56ab',
