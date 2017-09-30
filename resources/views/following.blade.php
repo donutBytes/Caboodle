@@ -6,8 +6,10 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Your Followed Users</div>
-
                 <div class="panel-body">
+                  @foreach($users as $user)
+                    <li>{{$user->name}}</li>
+                  @endforeach
                 </div>
             </div>
         </div>
