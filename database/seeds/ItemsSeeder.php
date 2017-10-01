@@ -22,5 +22,12 @@ class ItemsSeeder extends Seeder
         'producer'=>'Company',
         'date_released'=>$faker->date($format = 'Y-m-d',$max = 'now')
       ]);
+      DB::table('items')->insert([
+        'user_id'=>'90f8b5d6-c284-4da3-a251-17e4d9be0061',
+        'item_id'=>'o35fy3g4-63e5-4bd4-9c0f-2dd52e731ce4',
+        'name'=>'Super Mario Bros.',
+        'producer'=>'Nintendo',
+        'date_released'=>'1985-09-13'
+      ]);
     }
 }
