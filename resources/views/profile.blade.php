@@ -8,6 +8,15 @@
                 <div class="panel-heading">{{$user->name}}'s Profile </div>
                 <div class="panel-body">
                   <li><b>E-mail: </b>{{$user->email}}</li>
+                </br>
+                  <b>Kits</b>
+                  @if($kits->count()>0)
+                    @foreach($kits as $kit)
+                      <li><a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</li></a>
+                    @endforeach
+                  @else
+                    <li>User does not have any kits</li>
+                  @endif
                 </div>
             </div>
         </div>
