@@ -1,4 +1,7 @@
-<?php use App\Http\Controllers\FavoritesController; ?>
+<?php
+use App\Http\Controllers\FavoritesController;
+use App\Http\Controllers\FollowingController;
+      ?>
 @extends('layouts.app')
 
 @section('content')
@@ -8,6 +11,11 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{$user->name}}'s Profile </div>
                 <div class="panel-body">
+                    @if(FollowingController::isFollowing($user->user_id)==null)
+                        <a href='/following/{{$user->user_id}}'>Follow</a>
+                    @else
+                        <a href='/following/{{$user->user_id}}'>Unfollow</a>
+                    @endif
                   <li><b>E-mail: </b>{{$user->email}}</li>
                 </br>
                   <b>Kits</b>
