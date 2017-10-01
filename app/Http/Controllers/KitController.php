@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use \App\UserKits;
-use App\Users;
 use Illuminate\Http\Request;
 
 class KitController extends Controller

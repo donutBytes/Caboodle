@@ -25,3 +25,4 @@ Route::get('/createKit','CreateKitController@index')->name('createKit');
 Route::get('/createItem','CreateItemController@index')->name('createItem');
 Route::get('/kit/{kit_id}','KitController@index')->name('kit');
 Route::get('/item/{item_id}','ItemController@index')->name('item');
+Route::get('/profile/{user_id}','ProfileController@index')->name('profile');

@@ -8,7 +8,7 @@
                 <div class="panel-heading">Your Followed Users</div>
                 <div class="panel-body">
                   @foreach($users as $user)
-                    <li>{{$user->name}}</li>
+                    <li><a href="/profile/{{$user->user_id}}">{{$user->name}}</a></li>
                   @endforeach
                 </div>
             </div>
