@@ -13,12 +13,12 @@
                         <a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</a>
                         <a href="/favorites/{{$kit->kit_id}}">Unfavorite</a>
                     </li>
-                    Favorited Items
                   @endforeach
+                  Favorited Items
                   @foreach($items as $item)
                     <li>
                         <a href="/item/{{$item->kit_item_id}}">{{$item->name}}</a>
-                        <a href="/favorites/{{$item->kit_item_id}}">Unfavorite</a>    
+                        <a href="/favorites/{{$item->kit_item_id}}">Unfavorite</a>
                     </li>
                   @endforeach
                 </div>

@@ -1,3 +1,4 @@
+<?php use App\Http\Controllers\FavoritesController; ?>
 @extends('layouts.app')
 
 @section('content')
@@ -14,6 +15,11 @@
                     @foreach($kits as $kit)
                       <li>
                           <a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</a>
+                          @if(FavoritesController::isFavorited($kit->kit_id)!=null)
+                            <a href="/favorites/{{$kit->kit_id}}">Unfavorite</a>
+                          @else
+                            <a href="/favorites/{{$kit->kit_id}}">Favorite</a>
+                          @endif
                       </li>
                     @endforeach
                   @else

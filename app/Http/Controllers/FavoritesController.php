@@ -10,10 +10,14 @@ use Illuminate\Support\Facades\Redirect;
 
 class FavoritesController extends Controller
 {
+
+
   public function __construct()
   {
       $this->middleware('auth');
   }
+
+
   public function index() //not sure yet lmao tbd
   {
     $kits = collect([]);
@@ -32,20 +36,17 @@ class FavoritesController extends Controller
       }
       return view('favorites')->with(compact('kits'))->with(compact('items'));
   }
+
+
   public function toggle($id)
   {
-    $favoriteRecord = UserFavorites::where('user_id','=',Auth::user()->user_id)
-                                  ->where('liked_id','=',$id)->first();
-    if((UserKits::where('kit_id','=',$id))!=null)
-    {
-        $isKit = true;
-    }
-    else
-    {
-        $isKit = false;
-    }
+    $favoriteRecord = $this->isFavorited($id);
     if($favoriteRecord == null)
     {
+        if((UserKits::where('kit_id','=',$id))!=null)
+            $isKit = true;
+        else
+            $isKit = false;
         UserFavorites::create([
             'user_id'=>Auth::user()->user_id,
             'liked_id'=>$id,
@@ -57,5 +58,13 @@ class FavoritesController extends Controller
         $favoriteRecord->delete();
     }
     return Redirect::back();
+  }
+
+
+  public static function isFavorited($id)
+  {
+      $favoriteRecord = UserFavorites::where('user_id','=',Auth::user()->user_id)
+      ->where('liked_id','=',$id)->first();
+      return $favoriteRecord;
   }
 }
