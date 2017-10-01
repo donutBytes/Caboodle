@@ -8,7 +8,7 @@
                 <div class="panel-heading">Your Kits</div>
                   <div class="panel-body">
                     @foreach($kits as $kit)
-                      <li>{{$kit->kit_name}}</li>
+                      <li><a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</li></a>
                     @endforeach
                   </div>
             </div>
