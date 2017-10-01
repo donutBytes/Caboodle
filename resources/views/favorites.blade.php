@@ -9,11 +9,11 @@
                 <div class="panel-body">
                   Favorited Kits
                   @foreach($kits as $kit)
-                    <li>{{$kit->kit_name}}</li>
+                    <li><a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</a></li>
                     Favorited Items
                   @endforeach
                   @foreach($items as $item)
-                    <li>{{$item->name}}</li>
+                    <li><a href="/item/{{$item->kit_item_id}}">{{$item->name}}</a></li>
                   @endforeach
                 </div>
             </div>
