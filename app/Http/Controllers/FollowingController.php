@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\UserFollowing;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 class FollowingController extends Controller
 {
   public function __construct()
@@ -21,4 +22,40 @@ class FollowingController extends Controller
       }
       return view('following')->with(compact('users'));
     }
+    // public static function follow($id)
+    // {
+    //     UserFollowing::create([
+    //         'user_id'=>Auth::user()->user_id,
+    //         'followed_id'=>$id
+    //     ]);
+    //     return Redirect::back();
+    // }
+    // public static function unfollow($id)
+    // {
+    //     $followedRecord = UserFollowing::where('user_id','=',Auth::user()->user_id)
+    //     ->where('followed_id','=',$id)->first();
+    //     $followedRecord->delete();
+    //     return Redirect::back();
+    // }
+    public static function isFollowing($id)
+    {
+        $followingRecord = UserFollowing::where('user_id','=',Auth::user()->user_id)
+        ->where('followed_id','=',$id)->first();
+        return $followingRecord;
+    }
+    public function toggle($id)
+    {
+        if(($followingRecord = $this->isFollowing($id))!=null)
+        {
+            $followingRecord->delete();
+        }
+        else {
+            UserFollowing::create([
+                'user_id'=>Auth::user()->user_id,
+                'followed_id'=>$id
+            ]);
+        }
+        return Redirect::back();
+    }
+
 }

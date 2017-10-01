@@ -12,7 +12,9 @@
                   <b>Kits</b>
                   @if($kits->count()>0)
                     @foreach($kits as $kit)
-                      <li><a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</li></a>
+                      <li>
+                          <a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</a>
+                      </li>
                     @endforeach
                   @else
                     <li>User does not have any kits</li>
