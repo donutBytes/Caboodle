@@ -33,11 +33,15 @@ input[type=submitItem]:hover {
                 <div class="panel-heading">Create Item</div>
                 <!-- name,condition,cost,description, producer, date released (YYYY-MM-DD) -->
                 <div class="panel-body">
-                    <form name="newItem">
-                      <label for="itemName">Item Name</label>
-                      <input type="text" id="itemName" name="itemname" placeholder="Ex: New York Snowglobe">
-                      <label for="itemCost">Item Cost</label>
-                      <input type="text" id="itemCost" name="itemcost" placeholder="Ex: $35.00">
+                    <form action = "/createItem/store" method="post">
+                      <label for="name">Item Name</label>
+                      <input type="text" id="name" name="name" placeholder="Ex: New York Snowglobe">
+                      <label for="producer">Item Producer</label>
+                      <input type="text" id="producer" name="producer" placeholder="Ex: Nintendo">
+                      <label for="cost">Date of Release</label>
+                      <input type="text" id="date_released" name="date_released" placeholder="Ex: 2001-03-19">
+                      <label for="cost">Item Cost</label>
+                      <input type="text" id="cost" name="cost" placeholder="Ex: $35.00">
                       <label for="condition">Item Condition</label>
                       <select id="itemCondition" name="itemcondition">
                         <option value="excellent">Excellent</option>
@@ -46,9 +50,10 @@ input[type=submitItem]:hover {
                         <option value="fair">Fair</option>
                         <option value="poor">Poor</option>
                       </select>
-                      <label for="itemDescription">Item Description</label>
-                      <textarea id="itemDescription" name="itemDescription" placeholder="Ex: Bought @ New York" style="height:200px"></textarea>
-                      <input type="submitItem" value="Create New Item">
+                      <label for="description">Item Description</label>
+                      <textarea id="description" name="Description" placeholder="Ex: Bought @ New York" style="height:200px"></textarea>
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input type="submit" value="submit" name="submit">
                     </form>
                 </div>
             </div>

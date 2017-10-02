@@ -8,7 +8,9 @@ use Webpatser\Uuid\Uuid;
 class Items extends Model
 {
     protected $table = 'items';
-
+    protected $fillable = [
+        'name','producer','date_released','user_id'
+    ];
     public static function boot()
     {
         parent::boot();
