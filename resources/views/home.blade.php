@@ -11,7 +11,7 @@
                         <a href="/kit/{{$kit->kit_id}}" v><li>{{$kit->kit_name}}</li></a>
                         @endforeach
                         </br>
-                        <a type="button" href='/createKit' class="btn btn-primary btn-xs">Create New Kit</a>
+                        <a type="button" href='/newKit' class="btn btn-primary btn-xs">Create New Kit</a>
                 </div>
             </div>
         </div>

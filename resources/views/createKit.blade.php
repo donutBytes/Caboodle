@@ -33,14 +33,18 @@ input[type=submitKit]:hover {
                 <div class="panel-heading">Create Kit</div>
                   <!-- kit name, kit type, description -->
                 <div class="panel-body">
-                    <form name="newKit" action="">
-                      <label for="kitName">Kit Name:</label>
-                      <input type="text" id="kitName" name="kitname" placeholder="Ex: Yu-Gi-Oh Collection">
-                      <label for="kitType">Kit Type:</label>
-                      <input type="text" id="kitType" name="kittype" placeholder="Ex: Trading Cards">
-                      <label for="kitDescription">Kit Description:</label>
-                      <textarea id="kitDescription" name="kitDescription" placeholder="Ex: Yu-Gi-Oh cards I have collected over the years" style="height:200px"></textarea>
-                      <input type="submitKit" value="Create New Kit">
+                    <form name="newKit" method="POST" action="{{ route('createKit') }}">
+                        {!! csrf_field() !!}
+                        <label for="kitName">Kit Name:</label>
+                        <input type="text" id="kitName" name="kitName" placeholder="Ex: Yu-Gi-Oh Collection">
+                        <label for="kitType">Kit Type:</label>
+                        <input type="text" id="kitType" name="kitType" placeholder="Ex: Trading Cards">
+                        <label for="kitDescription">Kit Description:</label>
+                        <textarea id="kitDescription" name="kitDescription" placeholder="Ex: Yu-Gi-Oh cards I have collected over the years" style="height:200px"></textarea>
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            Create New Kit
+                        </button>
                     </form>
                 </div>
             </div>
