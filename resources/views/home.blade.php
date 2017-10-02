@@ -10,6 +10,7 @@
                     @foreach($kits as $kit)
                       <li><a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</li></a>
                     @endforeach
+                      <a href='/createKit'>Create New Kit</a>
                   </div>
             </div>
         </div>

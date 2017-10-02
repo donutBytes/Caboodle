@@ -30,3 +30,5 @@ Route::get('/favorites/{id}','FavoritesController@toggle');
 Route::get('/following/{id}','FollowingController@toggle');
 Route::get('/users','UsersController@index')->name('users');
 Route::get('/kits','KitsController@index')->name('kits');
+Route::post('/createItem','CreateItemController@index')->name('createItem');
+Route::post('/createKit','CreateKitController@index')->name('createKit');
