@@ -29,3 +29,4 @@ Route::get('/profile/{user_id}','ProfileController@index')->name('profile');
 Route::get('/favorites/{id}','FavoritesController@toggle');
 Route::get('/following/{id}','FollowingController@toggle');
 Route::get('/users','UsersController@index')->name('users');
+Route::get('/kits','KitsController@index')->name('kits');
