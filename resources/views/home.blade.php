@@ -6,11 +6,13 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Your Kits</div>
-                    <div class="panel-body">
-                        @foreach($kits as $kit)
-                            <a href="/kit/{{$kit->kit_id}}"><li>{{$kit->kit_name}}</li></a>
+                <div class="panel-body">
+                    @foreach($kits as $kit)
+                        <a href="/kit/{{$kit->kit_id}}" v><li>{{$kit->kit_name}}</li></a>
                         @endforeach
-                    </div>
+                        </br>
+                        <a type="button" href='/createKit' class="btn btn-primary btn-xs">Create New Kit</a>
+                </div>
             </div>
         </div>
     </div>

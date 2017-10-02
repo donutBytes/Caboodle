@@ -28,11 +28,16 @@ class FavoritesController extends Controller
                               ->where('isKit','=','0')->get();
       foreach($kit_ids as $kit_id)
       {
-          $kits->push(UserKits::where('kit_id','=',$kit_id->liked_id)->first());
+
+          $newKit=UserKits::where('kit_id','=',$kit_id->liked_id)->first();
+          if($newKit!=null)
+            $kits->push($newKit);
       }
       foreach($item_ids as $item_id)
       {
-          $items->push(KitItems::where('kit_item_id','=',$item_id->liked_id)->first());
+          $newItem = KitItems::where('kit_item_id','=',$item_id->liked_id)->first();
+          if($newItem!=null)
+            $items->push($newItem);
       }
       return view('favorites')->with(compact('kits'))->with(compact('items'));
   }

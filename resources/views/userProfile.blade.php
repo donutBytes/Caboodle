@@ -14,6 +14,8 @@
                     @foreach($kits as $kit)
                         <li><a href='/kit/{{$kit->kit_id}}'>{{$kit->kit_name}}</a></li>
                     @endforeach
+                </br>
+                    <a type="button" href='/createKit' class="btn btn-primary btn-xs">Create New Kit</a>
                 </div>
             </div>
         </div>

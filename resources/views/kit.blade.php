@@ -1,3 +1,6 @@
+<?php
+use App\Http\Controllers\FavoritesController;
+?>
 @extends('layouts.app')
 
 @section('content')
@@ -12,8 +15,18 @@
                 </br>
                   <b>Items</b>
                   @foreach($items as $item)
-                    <li><a href="/item/{{$item->kit_item_id}}">{{$item->name}}</li></a>
+                    <li>
+                        <a href="/item/{{$item->kit_item_id}}">{{$item->name}}</a>
+                        @if(FavoritesController::isFavorited($item->item_id)!=null)
+                          <a href="/favorites/{{$item->kit_item_id}}">Unfavorite</a>
+                        @else
+                          <a href="/favorites/{{$item->kit_item_id}}">Favorite</a>
+                        @endif
+                    </li>
                   @endforeach
+                  @if($kit->user_id == Auth::user()->user_id)
+                    <a href = '/createItem'>Add Item</a>
+                  @endif
                 </div>
             </div>
         </div>

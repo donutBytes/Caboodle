@@ -12,9 +12,9 @@ use App\Http\Controllers\FollowingController;
                 <div class="panel-heading">{{$user->name}}'s Profile </div>
                 <div class="panel-body">
                     @if(FollowingController::isFollowing($user->user_id)==null)
-                        <a href='/following/{{$user->user_id}}'>Follow</a>
+                        <a type="button" href='/following/{{$user->user_id}}' class="btn btn-primary btn-xs">Follow</a>
                     @else
-                        <a href='/following/{{$user->user_id}}'>Unfollow</a>
+                        <a type="button" href='/following/{{$user->user_id}}' class="btn btn-primary btn-xs">Unfollow</a>
                     @endif
                   <li><b>E-mail: </b>{{$user->email}}</li>
                 </br>
