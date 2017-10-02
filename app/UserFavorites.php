@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserFavorites extends Model
 {
-    pretected $table = 'user_favorites';
+    protected $table = 'user_favorites';
+    protected $fillable = [
+        'user_id','liked_id','isKit'
+    ];
 }

@@ -13,8 +13,19 @@
 
 Auth::routes();
 
+//Route::get('/', function () {
+//    return view('auth/login');
+//});
 Route::get('/', 'HomeController@index')->name('home');
-
-Route::view('/favorites','favorites')->middleware('auth')->name('favorites');
-Route::view('/following','following')->middleware('auth')->name('following');
-Route::view('/profile','profile')->middleware('auth')->name('profile');
+Route::get('/favorites','FavoritesController@index')->name('favorites');
+Route::get('/following','FollowingController@index')->name('following');
+Route::get('/userprofile','UserProfileController@index')->name('userProfile');
+Route::get('/profile','ProfileController@index')->name('profile');
+Route::get('/createKit','CreateKitController@index')->name('createKit');
+Route::get('/createItem','CreateItemController@index')->name('createItem');
+Route::get('/kit/{kit_id}','KitController@index')->name('kit');
+Route::get('/item/{item_id}','ItemController@index')->name('item');
+Route::get('/profile/{user_id}','ProfileController@index')->name('profile');
+Route::get('/favorites/{id}','FavoritesController@toggle');
+Route::get('/following/{id}','FollowingController@toggle');
+Route::get('/users','UsersController@index')->name('users');

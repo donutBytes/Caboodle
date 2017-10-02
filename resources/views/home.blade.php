@@ -5,16 +5,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    @auth
-                      Your Kits
-                    @endauth
-                    @guest
-                      You are not logged in
-                    @endguest
-                </div>
+                <div class="panel-heading">Your Kits</div>
+                  <div class="panel-body">
+                    @foreach($kits as $kit)
+                      <li><a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</li></a>
+                    @endforeach
+                  </div>
             </div>
         </div>
     </div>
