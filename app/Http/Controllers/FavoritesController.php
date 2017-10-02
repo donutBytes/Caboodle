@@ -48,7 +48,7 @@ class FavoritesController extends Controller
     $favoriteRecord = $this->isFavorited($id);
     if($favoriteRecord == null)
     {
-        if((UserKits::where('kit_id','=',$id))!=null)
+        if((UserKits::where('kit_id','=',$id))->first()!=null)
             $isKit = true;
         else
             $isKit = false;
