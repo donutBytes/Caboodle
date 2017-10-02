@@ -1,4 +1,3 @@
-<?php use App\Http\Controllers\FollowingController; ?>
 @extends('layouts.app')
 
 @section('content')
@@ -12,12 +11,7 @@
                         @foreach($users as $user)
                             <li>
                                 <a href="/profile/{{$user->user_id}}">{{$user->name}}</a>
-                                <?php $isFollowing = FollowingController::isFollowing($user->user_id)?>
-                                @if($isFollowing!=null)
-                                <a href="/following/{{$user->user_id}}">Unfollow</a>
-                                @else
-                                <a href="/following/{{$user->user_id}}">Follow</a>
-                                @endif
+                                <a type="button" href="/following/{{$user->user_id}}" class="btn btn-primary btn-xs">Unfollow</a>
                             </li>
                         @endforeach
                     @else

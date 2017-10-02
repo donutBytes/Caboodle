@@ -22,11 +22,6 @@ input[type=submitItem] {
 input[type=submitItem]:hover {
     background-color: #808080 ;
 }
-
-.container {
-    border-radius: 30px;
-    padding: 40px;
-}
 </style>
 </head>
 @section('content')

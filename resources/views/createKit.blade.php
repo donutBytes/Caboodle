@@ -22,11 +22,6 @@ input[type=submitKit] {
 input[type=submitKit]:hover {
     background-color: #808080 ;
 }
-
-.container {
-    border-radius: 30px;
-    padding: 40px;
-}
 </style>
 </head>
 @section('content')
@@ -38,7 +33,7 @@ input[type=submitKit]:hover {
                 <div class="panel-heading">Create Kit</div>
                   <!-- kit name, kit type, description -->
                 <div class="panel-body">
-                    <form name="newKit">
+                    <form name="newKit" action="">
                       <label for="kitName">Kit Name:</label>
                       <input type="text" id="kitName" name="kitname" placeholder="Ex: Yu-Gi-Oh Collection">
                       <label for="kitType">Kit Type:</label>
