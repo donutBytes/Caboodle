@@ -17,10 +17,12 @@ use App\Http\Controllers\FavoritesController;
                   @foreach($items as $item)
                     <li>
                         <a href="/item/{{$item->kit_item_id}}">{{$item->name}}</a>
-                        @if(FavoritesController::isFavorited($item->item_id)!=null)
-                          <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
-                        @else
-                          <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Favorite</a>
+                        @if($user->user_id != $kit->user_id)
+                            @if(FavoritesController::isFavorited($item->item_id)!=null)
+                              <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
+                            @else
+                              <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Favorite</a>
+                            @endif
                         @endif
                     </li>
                   @endforeach
