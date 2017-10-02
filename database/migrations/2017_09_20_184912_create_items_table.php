@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->string('producer');
             $table->date('date_released');
+            $table->timestamps();
         });
     }
 

@@ -18,14 +18,15 @@ use App\Http\Controllers\FavoritesController;
                     <li>
                         <a href="/item/{{$item->kit_item_id}}">{{$item->name}}</a>
                         @if(FavoritesController::isFavorited($item->item_id)!=null)
-                          <a href="/favorites/{{$item->kit_item_id}}">Unfavorite</a>
+                          <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
                         @else
-                          <a href="/favorites/{{$item->kit_item_id}}">Favorite</a>
+                          <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Favorite</a>
                         @endif
                     </li>
                   @endforeach
                   @if($kit->user_id == Auth::user()->user_id)
-                    <a href = '/createItem'>Add Item</a>
+              </br>
+                    <a type="button" href="/kit/{{$kit->kit_id}}/newItem" class="btn btn-primary btn-xs">Add Item</a>
                   @endif
                 </div>
             </div>

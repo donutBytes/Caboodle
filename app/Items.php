@@ -8,12 +8,12 @@ use Webpatser\Uuid\Uuid;
 class Items extends Model
 {
     protected $table = 'items';
-
+    protected $guarded = [];
     public static function boot()
     {
         parent::boot();
         self::creating(function ($model) {
-        $model->item_id = (string) Uuid::generate(4);
+            $model->item_id = (string) Uuid::generate(4);
         });
     }
 }

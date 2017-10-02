@@ -34,7 +34,8 @@ input[type=submitKit]:hover {
                   <!-- kit name, kit type, description -->
                 <div class="panel-body">
                     <form name="newKit" method="POST" action="{{ route('createKit') }}">
-                        {!! csrf_field() !!}
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                         <label for="kitName">Kit Name:</label>
                         <input type="text" id="kitName" name="kitName" placeholder="Ex: Yu-Gi-Oh Collection">
                         <label for="kitType">Kit Type:</label>

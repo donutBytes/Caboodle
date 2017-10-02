@@ -8,6 +8,7 @@ use Webpatser\Uuid\Uuid;
 class KitItems extends Model
 {
     protected $table = 'kit_items';
+    protected $guarded = [];
 
     public static function boot()
     {

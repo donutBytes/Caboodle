@@ -31,13 +31,10 @@ class User extends Authenticatable
     ];
     public static function boot()
     {
-      parent::boot();
-      self::creating(function ($model) {
-        $model->user_id = (string) Uuid::generate(4);
-    });
+        parent::boot();
+        self::creating(function ($model) {
+            $model->user_id = (string) Uuid::generate(4);
+        });
     }
-    // public function user_kits()
-    // {
-    //   return $this->hasMany(UserKits::class);
-    // }
+
 }
