@@ -24,9 +24,9 @@ use App\Http\Controllers\FollowingController;
                       <li>
                           <a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</a>
                           @if(FavoritesController::isFavorited($kit->kit_id)!=null)
-                            <a href="/favorites/{{$kit->kit_id}}">Unfavorite</a>
+                            <a type="button" href="/favorites/{{$kit->kit_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
                           @else
-                            <a href="/favorites/{{$kit->kit_id}}">Favorite</a>
+                            <a type="button" href="/favorites/{{$kit->kit_id}}" class="btn btn-primary btn-xs">Favorite</a>
                           @endif
                       </li>
                     @endforeach
