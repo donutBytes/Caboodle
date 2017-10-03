@@ -54,6 +54,7 @@ input[type=submitItem]:hover {
                         </select>
                         <label for="description">Item Description</label>
                         <textarea id="description" name="description" placeholder="Ex: Bought @ New York" style="height:200px"></textarea>
+                    </br></br>
                         <button type="submit" class="btn btn-primary">
                             Create New Item
                         </button>

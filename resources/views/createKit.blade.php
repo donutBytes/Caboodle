@@ -42,7 +42,7 @@ input[type=submitKit]:hover {
                         <input type="text" id="kitType" name="kitType" placeholder="Ex: Trading Cards">
                         <label for="kitDescription">Kit Description:</label>
                         <textarea id="kitDescription" name="kitDescription" placeholder="Ex: Yu-Gi-Oh cards I have collected over the years" style="height:200px"></textarea>
-                        <br>
+                    </br></br>
                         <button type="submit" class="btn btn-primary">
                             Create New Kit
                         </button>
