@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use \App\KitItems;
+use App\UserFavorites;
+use App\KitItems;
 use App\User;
 use App\UserKits;
 use Illuminate\Http\Request;
@@ -20,6 +21,9 @@ class ItemController extends Controller
     public function delete($kit_item_id)
     {
         $kitItem = KitItems::where('kit_item_id','=',$kit_item_id)->first();
+        $favorites = UserFavorites::where('liked_id','=',$kit_item_id)->get();
+        foreach($favorites as $favorite)
+            $favorite->delete();
         $kitItem->delete();
         return Redirect::back();
     }
