@@ -33,7 +33,7 @@ use App\Http\Controllers\FollowingController;
                     @endforeach
                 </ul>
                   @else
-                    <li>User does not have any kits</li>
+                    User does not have any kits
                   @endif
                 </div>
             </div>
