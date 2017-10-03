@@ -7,8 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Your Favorites</div>
                 <div class="panel-body">
-                  Favorited Kits
-                  @if($kits != null)
+                  <b>Favorited Kits</b>
+                  @if($kits->count()>0)
                   <ul class = "list-group">
                   @foreach($kits as $kit)
                     <li class = "list-group-item">
@@ -17,9 +17,11 @@
                     </li>
                   @endforeach
                   </ul>
+                  @else
+              </br> You do not have any favorited kits.</br></br>
                   @endif
-                  Favorited Items
-                  @if($items!=null)
+                  <b>Favorited Items</b>
+                  @if($items->count()>0)
                   <ul class = "list-group">
                   @foreach($items as $item)
                     <li class = "list-group-item">
@@ -27,6 +29,8 @@
                         <a type="button" style="float:right;" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
                     </li>
                   @endforeach
+                  @else
+              </br>You do not have any favorited items.
                   @endif
                 </div>
             </div>
