@@ -20,7 +20,7 @@ use App\Http\Controllers\FollowingController;
             </br></br>
                   <b>Kits</b>
                   <ul class="list-group">
-                  @if($kits!=null)
+                  @if($kits->count()>0)
                     @foreach($kits as $kit)
                       <li class="list-group-item">
                           <a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</a>
@@ -33,7 +33,7 @@ use App\Http\Controllers\FollowingController;
                     @endforeach
                 </ul>
                   @else
-                    <li>User does not have any kits</li>
+                    User does not have any kits
                   @endif
                 </div>
             </div>

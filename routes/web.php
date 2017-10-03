@@ -32,3 +32,5 @@ Route::get('/users','UsersController@index')->name('users');
 Route::get('/kits','KitsController@index')->name('kits');
 Route::post('/createItem','CreateItemController@store')->name('createItem');
 Route::post('/createKit','CreateKitController@createKit')->name('createKit');
+Route::get('/item/{kit_item_id}/delete','ItemController@delete')->name('deleteItem');
+Route::get('/kit/{kit_id}/delete','KitController@delete')->name('deleteKit');

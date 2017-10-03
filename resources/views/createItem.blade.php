@@ -37,13 +37,13 @@ input[type=submitItem]:hover {
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <label for="name">Item Name</label>
-                        <input type="text" id="name" name="name" placeholder="Ex: New York Snowglobe">
+                        <input type="text" id="name" name="name">
                         <label for="producer">Item Producer</label>
-                        <input type="text" id="producer" name="producer" placeholder="Ex: Nintendo">
+                        <input type="text" id="producer" name="producer">
                         <label for="cost">Date of Release</label>
-                        <input type="text" id="date_released" name="date_released" placeholder="Ex: 2001-03-19">
+                        <input type="text" id="date_released" name="date_released" placeholder="YYYY-MM-DD">
                         <label for="cost">Item Cost</label>
-                        <input type="text" id="cost" name="cost" placeholder="Ex: $35.00">
+                        <input type="text" id="cost" name="cost" placeholder="Enter a whole number">
                         <label for="condition">Item Condition</label>
                         <select id="condition" name="condition">
                             <option value="excellent">Excellent</option>
@@ -53,7 +53,7 @@ input[type=submitItem]:hover {
                             <option value="poor">Poor</option>
                         </select>
                         <label for="description">Item Description</label>
-                        <textarea id="description" name="description" placeholder="Ex: Bought @ New York" style="height:200px"></textarea>
+                        <textarea id="description" name="description" style="height:200px"></textarea>
                     </br></br>
                         <button type="submit" class="btn btn-primary">
                             Create New Item

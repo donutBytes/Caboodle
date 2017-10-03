@@ -11,13 +11,18 @@
                     <b>E-mail:</b> {{$user->email}} </br>
                 </br>
                     <b>Kits</b>
+                    @if($kits->count()>0)
                     <ul class = "list-group">
                     @foreach($kits as $kit)
                         <li class="list-group-item">
                             <a href='/kit/{{$kit->kit_id}}'>{{$kit->kit_name}}</a>
+                            <a href='/kit/{{$kit->kit_id}}/delete' type="button" style="float:right;" class="btn btn-primary btn-xs">Delete Kit</a>
                         </li>
                     @endforeach
                     </ul>
+                    @else
+                </br>You do not have any kits.</br>
+                    @endif
                     <a type="button" href='/newKit' class="btn btn-primary btn-xs">Create New Kit</a>
                 </div>
             </div>

@@ -37,11 +37,11 @@ input[type=submitKit]:hover {
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <label for="kitName">Kit Name:</label>
-                        <input type="text" id="kitName" name="kitName" placeholder="Ex: Yu-Gi-Oh Collection">
+                        <input type="text" id="kitName" name="kitName">
                         <label for="kitType">Kit Type:</label>
-                        <input type="text" id="kitType" name="kitType" placeholder="Ex: Trading Cards">
+                        <input type="text" id="kitType" name="kitType">
                         <label for="kitDescription">Kit Description:</label>
-                        <textarea id="kitDescription" name="kitDescription" placeholder="Ex: Yu-Gi-Oh cards I have collected over the years" style="height:200px"></textarea>
+                        <textarea id="kitDescription" name="kitDescription" style="height:200px"></textarea>
                     </br></br>
                         <button type="submit" class="btn btn-primary">
                             Create New Kit
