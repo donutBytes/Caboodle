@@ -15,11 +15,11 @@
             </b></div>
                 <div class="panel-body">
                 <ul class="list-group">
-                    <li class="list-group-item"><b>Description: </b>{{$item->description}}</li>
-                    <li class="list-group-item"><b>Producer: </b>{{$genericItem->producer}}</li>
+                    <li class="list-group-item"><b>Description:   </b>{{$item->description}}</li>
+                    <li class="list-group-item"><b>Producer:      </b>{{$genericItem->producer}}</li>
                     <li class="list-group-item"><b>Date Released: </b>{{$genericItem->date_released}}</li>
-                    <li class="list-group-item"><b>Condition: </b>{{$item->condition}}</li>
-                    <li class="list-group-item"><b>Cost: </b>${{$item->cost}}</li>
+                    <li class="list-group-item"><b>Condition:     </b>{{$item->condition}}</li>
+                    <li class="list-group-item"><b>Cost:          </b>${{$item->cost}}</li>
 
                 </ul>
                 </div>

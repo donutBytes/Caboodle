@@ -35,7 +35,6 @@ use App\Http\Controllers\FavoritesController;
                   @endforeach
               </ul>
                   @if($kit->user_id == Auth::user()->user_id)
-              </br>
                     <a type="button" href="/kit/{{$kit->kit_id}}/newItem" class="btn btn-primary btn-xs">Add Item</a>
                   @endif
                 </div>

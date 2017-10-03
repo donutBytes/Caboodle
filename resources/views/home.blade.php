@@ -16,7 +16,6 @@
                         </a>
                         @endforeach
                     </ul>
-                        </br>
                         <a type="button" href='/newKit' class="btn btn-primary btn-xs">Create New Kit</a>
                 </div>
             </div>
