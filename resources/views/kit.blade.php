@@ -21,6 +21,7 @@ use App\Http\Controllers\FavoritesController;
               </br></br>
                   <b>Items</b>
                   <ul class="list-group">
+                @if($items->count()>0)
                   @foreach($items as $item)
                     <li class="list-group-item">
                         <a href="/item/{{$item->kit_item_id}}">{{$item->name}}</a>
@@ -30,10 +31,15 @@ use App\Http\Controllers\FavoritesController;
                             @else
                               <a type="button" style="float:right;" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Favorite</a>
                             @endif
+                        @else
+                            <a type = "button" style="float:right;" href='/item/{{$item->kit_item_id}}/delete' class="btn btn-primary btn-xs">Delete Item</a>
                         @endif
                     </li>
                   @endforeach
               </ul>
+              @else
+              There are no items in this kit. </br>
+              @endif
                   @if($kit->user_id == Auth::user()->user_id)
                     <a type="button" href="/kit/{{$kit->kit_id}}/newItem" class="btn btn-primary btn-xs">Add Item</a>
                   @endif
