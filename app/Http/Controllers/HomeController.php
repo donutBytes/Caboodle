@@ -1,9 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\UserKits;
 class HomeController extends Controller
 {
     /**
@@ -11,9 +10,9 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct() //commented out middleware to prevent '/' redirect to '/login'
+    public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $kits = UserKits::where('user_id','=', Auth::user()->user_id)->get();
+        return view('home',compact('kits'));
     }
 }
