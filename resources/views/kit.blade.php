@@ -16,22 +16,24 @@ use App\Http\Controllers\FavoritesController;
                     @endif
                     </div>
                 <div class="panel-body">
-                  <li><b>Kit Type: </b>{{$kit->kit_type}}</li>
-                  <li><b>Kit Description: </b>{{$kit->description}}</li>
-                </br>
+                  <b>Kit Type: </b>{{$kit->kit_type}}</br>
+                  <b>Kit Description: </b>{{$kit->description}}
+              </br></br>
                   <b>Items</b>
+                  <ul class="list-group">
                   @foreach($items as $item)
-                    <li>
+                    <li class="list-group-item">
                         <a href="/item/{{$item->kit_item_id}}">{{$item->name}}</a>
                         @if(Auth::user()->user_id != $kit->user_id)
                             @if(FavoritesController::isFavorited($item->kit_item_id)!=null)
-                              <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
+                              <a type="button" style="float:right;" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
                             @else
-                              <a type="button" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Favorite</a>
+                              <a type="button" style="float:right;" href="/favorites/{{$item->kit_item_id}}" class="btn btn-primary btn-xs">Favorite</a>
                             @endif
                         @endif
                     </li>
                   @endforeach
+              </ul>
                   @if($kit->user_id == Auth::user()->user_id)
               </br>
                     <a type="button" href="/kit/{{$kit->kit_id}}/newItem" class="btn btn-primary btn-xs">Add Item</a>

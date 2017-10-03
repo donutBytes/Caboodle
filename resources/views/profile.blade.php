@@ -14,22 +14,24 @@ use App\Http\Controllers\FollowingController;
                     @if(FollowingController::isFollowing($user->user_id)==null)
                         <a type="button" href='/following/{{$user->user_id}}' class="btn btn-primary btn-xs">Follow</a>
                     @else
-                        <a type="button" href='/following/{{$user->user_id}}' class="btn btn-primary btn-xs">Unfollow</a>
+                        <a type="button"  href='/following/{{$user->user_id}}' class="btn btn-primary btn-xs">Unfollow</a>
                     @endif
-                  <li><b>E-mail: </b>{{$user->email}}</li>
-                </br>
+                </br><b>E-mail: </b>{{$user->email}}
+            </br></br>
                   <b>Kits</b>
-                  @if($kits->count()>0)
+                  <ul class="list-group">
+                  @if($kits!=null)
                     @foreach($kits as $kit)
-                      <li>
+                      <li class="list-group-item">
                           <a href="/kit/{{$kit->kit_id}}">{{$kit->kit_name}}</a>
                           @if(FavoritesController::isFavorited($kit->kit_id)!=null)
-                            <a type="button" href="/favorites/{{$kit->kit_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
+                            <a type="button" style="float:right;" href="/favorites/{{$kit->kit_id}}" class="btn btn-primary btn-xs">Unfavorite</a>
                           @else
-                            <a type="button" href="/favorites/{{$kit->kit_id}}" class="btn btn-primary btn-xs">Favorite</a>
+                            <a type="button" style="float:right;" href="/favorites/{{$kit->kit_id}}" class="btn btn-primary btn-xs">Favorite</a>
                           @endif
                       </li>
                     @endforeach
+                </ul>
                   @else
                     <li>User does not have any kits</li>
                   @endif

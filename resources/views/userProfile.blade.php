@@ -7,14 +7,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Your Profile</div>
                 <div class="panel-body">
-                    <li><b>Username:</b> {{$user->name}}</li>
-                    <li><b>E-mail:</b> {{$user->email}}</li>
+                    <b>Username:</b> {{$user->name}} </br>
+                    <b>E-mail:</b> {{$user->email}} </br>
                 </br>
                     <b>Kits</b>
+                    <ul class = "list-group">
                     @foreach($kits as $kit)
-                        <li><a href='/kit/{{$kit->kit_id}}'>{{$kit->kit_name}}</a></li>
+                        <li class="list-group-item">
+                            <a href='/kit/{{$kit->kit_id}}'>{{$kit->kit_name}}</a>
+                        </li>
                     @endforeach
-                </br>
+                    </ul>
                     <a type="button" href='/createKit' class="btn btn-primary btn-xs">Create New Kit</a>
                 </div>
             </div>
